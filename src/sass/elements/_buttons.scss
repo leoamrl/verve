@@ -1,0 +1,37 @@
+button,
+a,
+input[type=submit] {
+  &.button {
+    position: relative;
+    @include flexCenter;
+    display: flex;
+    @include transition;
+    width: fit-content;
+    height: 52px;
+    border: none;
+    padding: 0 32px;
+    background-color: $secondary-color;
+    font-family: $main-font;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 52px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+
+    &--ghost {
+      background-color: transparent;
+      border: 1px solid $main-color;
+      color: $main-color;
+
+      &:hover {
+        background-color: rgba($main-color, .1);
+      }
+    }
+  }
+}

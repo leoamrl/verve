@@ -1,0 +1,84 @@
+.cookies {
+  bottom: 60px;
+  position: fixed;
+  max-width: 420px;
+  width: calc(100% - 60px);
+  padding: 20px;
+  padding-right: 50px;
+  background-color: rgba(#333, .7);
+  backdrop-filter: blur(35px);
+  -webkit-backdrop-filter: blur(35px);
+  z-index: 1000;
+  @include boxShadow();
+
+  p {
+    margin-bottom: 20px;
+    color: #fff;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &-left {
+    left: 20px;
+  }
+  &-right {
+    right: 20px;
+  }
+  &-full {
+    max-width: initial;
+    width: 100%;
+  }
+
+  &-close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
+    @include transition;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+
+    &:hover {
+      color: darken(#fff, 10%);
+    }
+  }
+
+  &.accepted {
+    display: none;
+    animation: out .3s forwards;
+  }
+
+  &.not-accepted {
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    padding: 35px 80px 35px 40px;
+
+    &-left {
+      bottom: 20px;
+    }
+    &-right {
+      bottom: 20px;
+    }
+    &-full {
+      bottom: 0;
+      &.not-accepted {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+  
+        p {
+          margin-bottom: 0;
+        }
+        .button {
+          min-width: 210px;
+        }
+      }
+    }
+  }
+}

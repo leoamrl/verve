@@ -1,0 +1,40 @@
+{
+  "name": "verve",
+  "version": "1.0.0",
+  "description": "Website Wordpress (en-US)",
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.2",
+    "cssnano": "^4.1.10",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.3.9",
+    "mini-svg-data-uri": "^1.2.3",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "svgo-loader": "^3.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "start": "docker-compose up -d && npm run watch",
+    "watch": "webpack -w",
+    "build": "webpack --mode=production && npm run build:postcss",
+    "build:postcss": "postcss dist/wp-content/themes/verve/style.css -d dist/wp-content/themes/verve",
+    "backup-database": "docker exec verve-mysql /usr/bin/mysqldump -u verve --password=verve verve > backup.sql",
+    "restore-database": "cat backup.sql | docker exec -i verve-mysql /usr/bin/mysql -u verve --password=verve verve"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "gsap": "^3.10.4"
+  }
+}

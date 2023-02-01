@@ -1,0 +1,34 @@
+.whatsapp-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: #009e53;
+    font-size: 25px;
+    color: #fff;
+    @include boxShadow();
+
+    &:hover {
+      background-color: darken(#009e53, 10%);
+    }
+  }
+
+  @media (min-width: 768px) {
+    bottom: 30px;
+    right: 30px;
+
+    a {
+      width: 70px;
+      height: 70px;
+      font-size: 35px;
+    }
+  }
+}

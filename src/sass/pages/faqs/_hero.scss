@@ -1,0 +1,47 @@
+.faqs-hero {
+
+  &-title,
+  &-subtitle {
+    text-align: center;
+    color: $font-color;
+  }
+
+  &-title {
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  &-subtitle {
+    color: rgba($font-color, .8);
+    font-size: 22px;
+  }
+
+  &-search {
+    .form-field {
+      max-width: 620px;
+      margin: 0 auto 20px;
+    }
+
+    &-buttons {
+      @include flexCenter;
+      font-size: clamp(8px, 3vw, 16px);
+      gap: 10px;
+
+      .button {
+        font-size: clamp(8px, 3vw, 16px);
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 80px 0;
+
+    &-title {
+      font-size: 48px;
+    }
+
+    &-subtitle {
+      font-size: 32px;
+    }
+  }
+}

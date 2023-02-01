@@ -1,0 +1,100 @@
+.header {
+  width: 100%;
+  padding: 40px 0;
+
+  &--fixed {
+    position: fixed;
+    transform: translateY(-100%);
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    @include boxShadow();
+    background-color: #fff;
+    z-index: 100;
+
+    .header {
+      &-logo {
+        img {
+          height: 30px;
+        }
+      }
+
+      &-menu {
+        a {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &-logo {
+    max-width: 50%;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-hamburger {
+    background: #fff;
+    border-radius: 20px;
+    position: relative;
+    z-index: 101;
+    .hamburger {
+      padding: 15px 20px;
+      cursor: pointer;
+    }
+  }
+
+  &-menu {
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 0;
+    height: 100vh;
+    padding: 50px 0;
+    background-color: darken($main-color, 5%);
+    overflow: hidden;
+    z-index: 100;
+  }
+
+  @media (min-width: 1300px) {
+    padding: 40px 0;
+
+    &--fixed {
+      padding: 15px 0;
+    }
+
+    &-container {
+      justify-content: space-between;
+      max-width: 1368px;
+    }
+
+    &-hamburger {
+      display: none;
+    }
+
+    &-menu {
+      position: relative;
+      width: initial;
+      height: initial;
+      left: initial;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-end;
+      border-left: 0;
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 15px 30px;
+      overflow: visible;
+      order: 2;
+      z-index: 1;
+    }
+  }
+}

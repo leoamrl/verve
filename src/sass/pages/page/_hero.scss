@@ -1,0 +1,11 @@
+.page {
+  &-hero {
+    margin-bottom: 60px;
+    padding: 50px 0;
+    background-color: #eee;
+
+    &-title {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.faqs-form {
+  margin-bottom: 100px;
+
+  &-title {
+    font-weight: 700;
+  }
+
+  &-subtitle {
+    color: lighten($main-color, 10%);
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      display: grid;
+      gap: 60px;
+      grid-template-columns: 40% 1fr;
+    }
+  }
+}

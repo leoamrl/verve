@@ -1,0 +1,45 @@
+.content {
+  img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: bottom;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote {
+    margin-bottom: 20px;
+  }
+
+  ul,
+  ol {
+    padding-left: 30px;
+
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style: disc;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover {
+      color: $main-color;
+    }
+  }
+
+  hr {
+    margin-bottom: 20px;
+  }
+}

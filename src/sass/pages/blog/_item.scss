@@ -1,0 +1,30 @@
+.blog-item {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 20px;
+  @include boxShadow();
+  @include transition;
+
+  &-thumb {
+    margin-bottom: 20px;
+  }
+
+  &-date {
+    margin-bottom: 10px;
+    color: lighten($font-color, 60%);
+
+    .fa {
+      margin-right: 10px;
+    }
+  }
+
+  .button {
+    margin-top: auto;
+  }
+
+  &:hover {
+    @include boxShadowHover();
+  }
+}

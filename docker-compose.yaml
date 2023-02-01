@@ -1,0 +1,33 @@
+version: "3.2"
+
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: ./config/Dockerfile
+    container_name: verve-wordpress
+    restart: "no"
+    ports:
+      - 8007:80
+    image: wordpress:latest
+    volumes:
+      - ./dist/wp-content:/var/www/html/wp-content/
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: verve
+      WORDPRESS_DB_PASSWORD: verve
+      WORDPRESS_DB_NAME: verve
+      WORDPRESS_DEBUG: 1
+    privileged: true
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: verve-mysql
+    restart: "no"
+    environment:
+      MYSQL_DATABASE: verve
+      MYSQL_USER: verve
+      MYSQL_PASSWORD: verve
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"

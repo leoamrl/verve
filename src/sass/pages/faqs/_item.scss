@@ -1,0 +1,59 @@
+.faqs-item {
+  margin-bottom: 20px;
+
+  &-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 15px 20px;
+    background-color: #fff;
+    @include boxShadow();
+    @include transition;
+
+    &:hover {
+      @include boxShadowHover();
+      background-color: darken(#fff, 1%);
+    }
+
+    &.isActive {
+      .expand {
+        display: none;
+      }
+
+      .collapse {
+        display: block;
+      }
+    }
+  }
+
+  &-question {
+    margin-bottom: 0;
+    @include font(700, 16px, $main-color, $main-font, 120%);
+  }
+
+  &-caption {
+    width: fit-content;
+    font-size: 14px;
+    color: $main-color;
+
+    .collapse {
+      display: none;
+    }
+  }
+
+  &-content {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    &-title {
+      padding: 30px;
+    }
+
+    &-question {
+      font-weight: 400;
+      font-size: 22px;
+    }
+  }
+}

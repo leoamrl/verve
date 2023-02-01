@@ -1,0 +1,50 @@
+.blog-hero {
+  padding: 50px 0;
+  background-color: #eee;
+
+  &-title {
+    color: $font-color;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  &-search {
+    .form-field {
+      margin: 0 auto 20px;
+    }
+  }
+
+  &-category {
+    .form-field {
+      select {
+        @extend .form-field-input;
+        appearance: none;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 80px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-title {
+      font-size: 48px;
+    }
+
+    &-actions {
+      display: flex;
+      width: 500px;
+      gap: 20px;
+    }
+
+    &-search,
+    &-category {
+      width: 100%;
+    }
+  }
+}
