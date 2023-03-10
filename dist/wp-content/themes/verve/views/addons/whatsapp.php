@@ -6,9 +6,8 @@
     $active = get_sub_field('active');
     $number = preg_replace('/\D+/', '', get_sub_field('number'));
     $message = get_sub_field('message');
-    $position = get_sub_field('position');
 
-    $link = 'https://api.whatsapp.com/send?phone='.$number;
+    $link = 'https://api.whatsapp.com/send?phone='.$number.'&text='.$message;
     if ($active) {
 ?>
 <div class="whatsapp-widget position-<?= $position ?>">

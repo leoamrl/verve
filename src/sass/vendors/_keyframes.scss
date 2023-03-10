@@ -9,3 +9,14 @@
     transform: translate3d(0, 0, 0);
   }
 }
+
+@keyframes appearAccordionContent {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}

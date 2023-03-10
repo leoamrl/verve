@@ -1,5 +1,5 @@
-<section class="faqs-hero page-hero">
-  <div class="container">
+<div class="container">
+  <section class="faqs-hero page-hero">
     <h1 class="faqs-hero-title">
       <?php 
         if( is_search() ) {
@@ -18,7 +18,7 @@
             type="text"
             name="s"
             id="search"
-            placeholder="Sua dúvida"
+            placeholder="assunto..."
             value="<?php the_search_query(); ?>">
           <button
             class="form-field-button"
@@ -43,5 +43,5 @@
         </div>
       </form>
     </div>
-  </div>
-</section>
+  </section>
+</div>

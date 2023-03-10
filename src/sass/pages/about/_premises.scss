@@ -1,0 +1,49 @@
+.about-premises {
+  padding: 80px 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  &-image {
+    margin-bottom: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    @include figureWrapper(100%, 350px);
+  }
+  &-content {
+    h3 {
+      margin-bottom: 50px;
+      text-transform: uppercase;
+      color: $secondary-color;
+      font-size: 18px;
+      line-height: 27px;
+      padding-bottom: 20px;
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0; bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: $secondary-color;
+      }
+    }
+    li {
+      margin-bottom: 25px;
+    }
+  }
+  @media (min-width: 768px) {
+    padding: 120px 0;
+    &-image {
+      @include figureWrapper(100%, 450px);
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      display: grid;
+      gap: 120px;
+      grid-template-columns: 450px 1fr;
+      align-items: center;
+    }
+    &-image {
+      margin-bottom: 0;
+    }
+  }
+}

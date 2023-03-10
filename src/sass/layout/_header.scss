@@ -1,6 +1,7 @@
 .header {
   width: 100%;
   padding: 40px 0;
+  background-color: $main-color;
 
   &--fixed {
     position: fixed;
@@ -43,6 +44,7 @@
     border-radius: 20px;
     position: relative;
     z-index: 101;
+    color: $main-color;
     .hamburger {
       padding: 15px 20px;
       cursor: pointer;
@@ -62,6 +64,12 @@
     background-color: darken($main-color, 5%);
     overflow: hidden;
     z-index: 100;
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media (min-width: 1300px) {

@@ -10,6 +10,8 @@
   ol,
   blockquote {
     margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 28px;
   }
 
   ul,
@@ -42,4 +44,14 @@
   hr {
     margin-bottom: 20px;
   }
+
+  @media (min-width: 1200px) {
+    p,
+    ul,
+    ol,
+    blockquote {
+      font-size: 18px;
+      line-height: 30px;
+    }
+  } 
 }

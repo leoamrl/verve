@@ -1,0 +1,87 @@
+.estimate {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 15px;
+  .form {
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: space-between;
+    &-field {
+      width: 100%;
+      &:nth-child(2),
+      &:nth-child(3) {
+        width: 49%;
+      }
+      &--radio,
+      &--check {
+        display: block;
+        border-bottom: none;
+        margin-top: 30px;
+
+        .form-field-label {
+          margin-bottom: 15px;
+        }
+      }
+      &-radio,
+      &-check {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+    }
+  }
+  .wpcf7 {
+    &-list {
+      &-item {
+        input[type=radio] {
+          display: none;
+
+          &:checked ~ span {
+            background-color: $tertiary-color;
+            color: $main-color;
+            border-color: $tertiary-color;
+            
+          }
+        }
+        input[type=checkbox] {
+          display: none;
+
+          &:checked ~ span {
+            background-color: $tertiary-color;
+            color: $main-color;
+            border-color: $tertiary-color;
+          }
+        }
+        &-label {
+          margin-bottom: 5px;
+          display: block;
+          border-radius: 20px;
+          padding: 10px 20px;
+          border: 1px solid #fff;
+          cursor: pointer;
+          @include transition;
+          &:hover {
+            background-color: $secondary-color;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    h2 {
+      font-size: 38px;
+    }
+    .form {
+      &-field {
+        &-label {
+          font-size: 18px;
+
+          span {
+            opacity: .7;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}

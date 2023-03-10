@@ -21,7 +21,7 @@
           $link = get_sub_field('link');
           $new_tab = (get_sub_field('new_tab')) ? ' target="_blank"' : '';
       ?>
-      <a href="<?= $link ?>" <?= $new_tab ?> class="home-hero-button">
+      <a href="<?= $link ?>" <?= $new_tab ?> class="button">
         <?= $name ?> <i class="fa fa-arrow-right"></i>
       </a>
       <?php
@@ -33,6 +33,14 @@
         <img data-src="<?= $image ?>" alt="<?= get_bloginfo('name') ?>" class="img-fluid defer">
       </figure>
     </div>
+    <img
+      data-src="<?= get_template_directory_uri() . '/assets/images/hero-detail-top.png'; ?>"
+      alt="<?= get_bloginfo('name') ?>"
+      class="img-fluid defer home-hero-detail-top">
+    <img
+      data-src="<?= get_template_directory_uri() . '/assets/images/hero-detail.png'; ?>"
+      alt="<?= get_bloginfo('name') ?>"
+      class="img-fluid defer home-hero-detail">
   </div>
 </section>
 <?php

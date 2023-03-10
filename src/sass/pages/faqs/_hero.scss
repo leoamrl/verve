@@ -3,7 +3,7 @@
   &-title,
   &-subtitle {
     text-align: center;
-    color: $font-color;
+    color: #fff;
   }
 
   &-title {
@@ -12,7 +12,7 @@
   }
 
   &-subtitle {
-    color: rgba($font-color, .8);
+    color: rgba(#fff, .8);
     font-size: 22px;
   }
 

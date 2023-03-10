@@ -1,5 +1,5 @@
-<section class="blog-hero page-hero">
-  <div class="container">
+<div class="container">
+  <section class="blog-hero page-hero">
     <h1 class="blog-hero-title">
       <?php
         if( is_category() ) {
@@ -66,5 +66,5 @@
         </script>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>

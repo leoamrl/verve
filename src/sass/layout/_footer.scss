@@ -1,12 +1,66 @@
 .footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.1);
+  
+
+  &-space {
+    width: 100%;
+    position: relative;
+    z-index: -2;
+  }
 
   &-main {
-    padding: 40px 0;
+    padding: 70px 0;
+  }
+
+  &-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-social {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 20px;
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+  &-menu {
+    margin-top: 50px;
+    text-align: center;
+
+    .menu {
+      &-item {
+        margin-bottom: 30px;
+        a {
+          line-height: 40px;
+          font-size: 20px;
+          color: rgba(255,255,255, .9);
+        }
+        .sub-menu {
+          .menu-item {
+            margin-bottom: 0;
+          }
+          a {
+            line-height: 30px;
+            font-weight: 300;
+            font-size: 18px;
+            color: rgba(255,255,255, .7);
+          }
+        }
+      }
+    }
   }
   &-copyright {
     padding: 25px 0;
     background-color: rgba(0, 0, 0, 0.2);
+    text-align: center;
     p {
       font-size: 14px;
       color: rgba(255,255,255, .6);
@@ -14,12 +68,50 @@
   }
 
   @media (min-width: 1024px) {
-    &-copyright {
+    &-main {
+      padding-top: 120px;
+      padding-bottom: 70px;
       .container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        display: grid;
+        grid-template-areas: 
+          'logo menu'
+          'social menu'
+          'social menu';
       }
+    }
+    &-logo {
+      grid-area: logo;
+      justify-content: flex-start;
+    }
+    &-social {
+      margin-top: 0;
+      justify-content: flex-start;
+      grid-area: social;
+    }
+    &-menu {
+      margin-top: 0;
+      grid-area: menu;
+      .menu {
+        text-align: left;
+        display: flex;
+        justify-content: space-between;
+        &-item {
+          a {
+            line-height: 42px;
+          }
+          .sub-menu {
+            a {
+              line-height: 42px;
+              &:hover {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+    &-copyright {
+      text-align: left;
     }
   }
 }

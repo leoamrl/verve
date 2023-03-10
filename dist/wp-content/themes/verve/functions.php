@@ -4,6 +4,7 @@ require_once get_template_directory() . '/includes/helpers.php';
 require_once get_template_directory() . '/includes/optimizer.php';
 require_once get_template_directory() . '/includes/pagination.php';
 require_once get_template_directory() . '/includes/custom_post_faqs.php';
+require_once get_template_directory() . '/includes/custom_post_cases.php';
 
 function verve_setup() {
 	load_theme_textdomain( 'verve', get_template_directory() . '/languages' );
@@ -16,6 +17,7 @@ function verve_setup() {
 
 	register_nav_menus( array(
 		'header'	=> __( 'Header Menu', 'verve' ),
+    'footer'	=> __( 'Footer Menu', 'verve' ),
 	));
 	add_theme_support( 'html5', array(
 		'search-form',
@@ -40,10 +42,10 @@ function verve_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'verve_scripts' );
 
-function verve_footer_styles() {
+function verve_header_styles() {
   wp_enqueue_style( 'verve-style', get_template_directory_uri(). '/style.css' );
 };
-add_action( 'get_footer', 'verve_footer_styles' );
+add_action( 'get_header', 'verve_header_styles' );
 
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page(array(

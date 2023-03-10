@@ -30,11 +30,28 @@
         <?php
           wp_nav_menu(array('theme_location' => 'header' ));
         ?>
+        
+        <ul class="header-social">
+          <?php
+          if( have_rows('social', 'options') ):
+            while( have_rows('social', 'options') ):
+              the_row();
+
+              $icon = get_sub_field('icon');
+              $link = get_sub_field('link');
+              $title = get_sub_field('title');
+          ?>
+          <li>
+            <a href="<?= $link ?>" title="<?= $title ?>" target="_blank" class="header-social-item">
+              <?= $icon ?>
+            </a>
+          </li>
+          <?php
+            endwhile;
+          endif; ?>
+        </ul>
       </div>
 
-      <div class="header-social">
-        
-      </div>
 
       <div class="header-hamburger">
         <div class="hamburger" data-menu-trigger>

@@ -1,0 +1,152 @@
+.home-blog {
+  padding: 80px 0;
+
+  &-header {
+    &-link {
+      text-transform: uppercase;
+      @include flexCenter;
+      justify-content: flex-start;
+      gap: 30px;
+      color: $secondary-color;
+
+      &:hover {
+        color: darken($secondary-color, 10%);
+      }
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+  &-content {
+    margin-top: 50px;
+  }
+  &-featured,
+  &-item {
+    margin-bottom: 40px;
+    figure {
+      border-radius: 10px;
+      overflow: hidden;
+      @include figureWrapper(100%, 280px);
+      margin-bottom: 30px;
+      overflow: hidden;
+      img {
+        @include transition(10s);
+      }
+      &:hover {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      @include transition;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+    p {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @include transition;
+      i {
+        font-size: 12px;
+      }
+    }
+    a {
+      &:hover {
+        color: $secondary-color;
+        gap: 30px;
+      }
+    }
+  }
+  &-item {
+    &-cat {
+      display: block;
+      width: fit-content;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: $tertiary-color;
+      margin-bottom: 16px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 50px;
+      .section-header {
+        margin-bottom: 0;
+        h2 {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &-content {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 40px;
+    }
+    &-list {
+      .home-blog-item {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        h1 {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+        figure {
+          margin-bottom: 0;
+          @include figureWrapper(130px, 100px);
+        }
+        &-content {
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 1200px) {
+    padding: 90px 0;
+    &-content {
+      align-items: center;
+      grid-template-columns: 555px 1fr;
+      gap: 50px;
+    }
+    &-featured {
+      margin-bottom: 0;
+
+      figure {
+        @include figureWrapper(100%, 370px);
+      }
+    }
+    &-list {
+      padding: 80px 50px;
+      border-radius: 10px;
+      background-color: rgba(0,0,0,.2);
+      .home-blog-item {
+        gap: 35px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        figure {
+          @include figureWrapper(180px, 120px);
+        }
+        h1 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

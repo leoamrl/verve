@@ -1,0 +1,145 @@
+.home-faqs {
+  padding: 120px 0 80px;
+
+  &-item {
+    margin-bottom: 10px;
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 25px 30px;
+      cursor: pointer;
+      gap: 20px;
+      @include transition;
+      &:hover {
+        background-color: rgba(#fff, .9);
+      }
+      &.isActive {
+        .home-faqs-item-question {
+          color: $main-color;
+        }
+
+        .home-faqs-item-caption {
+          border-color: $main-color;
+
+          .expand,
+          .collapse {
+            background-color: $main-color;
+          }
+        }
+  
+        .home-faqs-item-content {
+          transform: scaleY(1);
+        }
+        .collapse {
+          transform: translate(-50%, -50%) scaleY(0);
+        }
+      }
+    }
+    &-question {
+      margin-bottom: 0;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      color: $font-color;
+    }
+    &-caption {
+      position: relative;
+      @include flexCenter;
+      min-width: 25px;
+      width: 25px;
+      height: 25px;
+      font-size: 14px;
+      color: $main-color;
+      border-radius: 25px;
+  
+      .expand {
+        width: 10px; height: 2px;
+        background-color: $main-color;
+        display: block;
+      }
+
+      .collapse {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 10px; width: 2px;
+        background-color: $main-color;
+        display: block;
+        transform: translate(-50%, -50%);
+        @include transition;
+      }
+    }
+    &-content {
+      display: none;
+      transform-origin: top;
+
+      &.isActive {
+        display: block;
+        opacity: 0;
+        padding: 20px 10px 10px;
+        animation: appearAccordionContent .2s 1 forwards;
+      }
+    }
+  }
+  &-action {
+    margin-top: 60px;
+    &-icon {
+      margin: 0 0 20px;
+      width: 55px;
+      height: 55px;
+      @include flexCenter;
+      font-size: 30px;
+      border-radius: 10px;
+      background-color: rgba(0,0,0,.2);
+      @include transition;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    &:hover {
+      .home-faqs-action-icon {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    &-title {
+      width: 50%;
+    }
+  }
+  @media (min-width: 1200px) {
+    padding: 200px 0 90px;
+    .container {
+      display: grid;
+      gap: 50px;
+      justify-content: space-between;
+      grid-template-columns: 1fr 700px;
+      position: relative;
+    }
+    &-title {
+      width: 100%;
+    }
+    &-list {
+      margin-top: 0;
+      max-width: 1000px;
+    }
+    &-action {
+      position: absolute;
+      bottom: 10px; left: 0;
+    }
+  }
+  @media (min-width: 1340px) {
+    .container {
+      grid-template-columns: 530px 700px;
+    }
+    &-item {
+      &-question {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}

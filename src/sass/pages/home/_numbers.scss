@@ -1,0 +1,48 @@
+.home-numbers {
+  margin-top: -80px;
+  padding: 170px 0 80px;
+  background-color: rgba(0,0,0,.1);
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+  &-item {
+    padding: 0 30px;
+    margin-bottom: 60px;
+    text-align: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 20px;
+      color: rgba(255,255,255,.8);
+      &:last-child {
+        margin-bottom: 0;
+        color: rgba(255,255,255,.6);
+      }
+    }
+    h2 {
+      margin-bottom: 18px;
+      font-size: 32px;
+    }
+    &:hover {
+      .home-numbers-icon {
+        transform: translateY(-10px);
+      }
+    }
+  }
+  &-icon {
+    margin: 0 auto 30px;
+    width: 90px;
+    height: 90px;
+    @include flexCenter;
+    font-size: 30px;
+    border-radius: 10px;
+    @include transition;
+    background-color: rgba(0,0,0,.2);
+    color: rgba(255,255,255,.7);
+  }
+}

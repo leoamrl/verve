@@ -1,201 +1,205 @@
-.menu {
-  list-style: none;
-  padding: 0 50px;
-
-  &-item {
-    margin-bottom: 15px;
-
-    a {
-      display: block;
-      @include font(700, 18px, #fff, $main-font, 35px);
-
-      &:hover {
-        color: $secondary-color;
-      }
-    }
-
-    &-button {
-      a {
-        @extend .button;
-        line-height: 48px;
-      }
-    }
-
-    &.current_page_item.page_item,
-    &.current-menu-parent,
-    &.current-menu-item.page_item {
-      >a {
-        color: $secondary-color;
-      }
-    }
-
-    &-has-children {
-      &>a {
-        &::after {
-          content: '\f078';
-          margin-left: 10px;
-          font-family: 'Font Awesome 5 Free';
-          position: absolute;
-          font-weight: 700;
-          font-size: 11px;
-          @include transition;
-        }
-      }
-
-      &.open {
-        .sub-menu {
-          display: block;
-        }
-
-        &>a {
-          &::after {
-            content: '\f077'
-          }
-        }
-      }
-    }
-  }
-
-  .sub-menu {
-    display: none;
-    padding-left: 30px;
-
-    a {
-      display: flex;
-      align-items: center;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-
-      .fa {
-        margin-right: 12px;
-        font-size: 18px;
-      }
-    }
-  }
-
-  @media (min-width: 1300px) {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    margin-top: 0px;
-    margin-bottom: 0;
-    margin-right: 0;
-    padding: 0;
-
+.header {
+  .menu {
+    list-style: none;
+    padding: 0 50px;
+  
     &-item {
-      margin-bottom: 0;
-      margin-right: 0;
-      position: relative;
-      display: block;
-      animation: none;
-
+      margin-bottom: 15px;
+  
+      a {
+        display: block;
+        @include font(700, 18px, #fff, $main-font, 35px);
+  
+        &:hover {
+          color: $secondary-color;
+        }
+      }
+  
+      &-button {
+        a {
+          @extend .button;
+          line-height: 42px;
+        }
+      }
+  
       &.current_page_item.page_item,
       &.current-menu-parent,
       &.current-menu-item.page_item {
         >a {
-          color: $main-color;
-          font-weight: 700;
+          color: $secondary-color;
+        }
+        &.menu-item-button {
+          >a {
+            color: #fff;
+          }
         }
       }
-
-      a {
-        padding: 10px 25px;
-        white-space: nowrap;
-        color: $font-color;
-      }
-
-      &-button {
-        a {
-          padding: 0 32px;
-          color: #fff;
-        }
-      }
-
+  
       &-has-children {
-        position: relative;
-
-        a {
-          padding-right: 40px;
+        &>a {
+          &::after {
+            content: '\f078';
+            margin-left: 10px;
+            font-family: 'Font Awesome 5 Free';
+            position: absolute;
+            font-weight: 700;
+            font-size: 11px;
+            @include transition;
+          }
         }
+  
+        &.open {
+          .sub-menu {
+            display: block;
+          }
+  
+          &>a {
+            &::after {
+              content: '\f077'
+            }
+          }
+        }
+      }
+    }
+  
+    .sub-menu {
+      display: none;
+      padding-left: 30px;
+  
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+  
+        .fa {
+          margin-right: 12px;
+          font-size: 18px;
+        }
+      }
+    }
+  
+    @media (min-width: 1300px) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-top: 0px;
+      margin-bottom: 0;
+      margin-right: 0;
+      padding: 0;
+  
+      &-item {
+        margin-bottom: 0;
+        margin-right: 0;
+        position: relative;
+        display: block;
+        animation: none;
+  
+        a {
+          padding: 10px 25px;
+          white-space: nowrap;
+          color: $font-color;
+        }
+  
+        &-button {
+          a {
+            padding: 0 32px;
+            color: #fff;
+            line-height: 48px;
 
-        >.sub-menu {
-          .menu {
-            &-item {
-              &-has-children {
-                &>a {
-                  &::after {
-                    content: '\f054';
-                    position: absolute;
-                    right: 15px;
-                    margin-left: 10px;
-                    font-family: 'Font Awesome 5 Free';
-                    font-weight: 700;
-                    font-size: 11px;
-                    @include transition;
+            &:hover {
+              background-color: darken($secondary-color, 10%);
+              color: #fff;
+            }
+          }
+        }
+  
+        &-has-children {
+          position: relative;
+  
+          a {
+            padding-right: 40px;
+          }
+  
+          >.sub-menu {
+            .menu {
+              &-item {
+                &-has-children {
+                  &>a {
+                    &::after {
+                      content: '\f054';
+                      position: absolute;
+                      right: 15px;
+                      margin-left: 10px;
+                      font-family: 'Font Awesome 5 Free';
+                      font-weight: 700;
+                      font-size: 11px;
+                      @include transition;
+                    }
                   }
                 }
               }
             }
           }
-        }
-
-        &:hover {
-          >.sub-menu {
-            display: flex;
-            opacity: 0;
-            animation: appearSubMenu .2s 1 forwards;
-          }
-        }
-      }
-    }
-
-    .sub-menu {
-      display: none;
-      position: absolute;
-      left: -35px;
-      padding: 15px 0;
-      width: 360px;
-      background-color: #fff;
-      box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
-      flex-wrap: wrap;
-
-      .sub-menu {
-        left: 100%;
-        top: 0;
-      }
-
-      li {
-        width: 100%;
-        margin-right: 0;
-
-        &:not(:last-child) {
-          a {
-            border-bottom: 0;
-          }
-        }
-
-        &.current-menu-item {
-          a {
-            color: $main-color;
-
-            .fa {
-              color: $main-color;
+  
+          &:hover {
+            >.sub-menu {
+              display: flex;
+              opacity: 0;
+              animation: appearSubMenu .2s 1 forwards;
             }
           }
         }
-
-        a {
-          height: 40px;
-          padding-left: 25px;
-          padding-right: 25px;
-          font-size: 16px;
-          color: #222;
-
-          &:hover {
-            color: $main-color;
-
-            .fa {
-              color: #fff;
+      }
+  
+      .sub-menu {
+        display: none;
+        position: absolute;
+        left: -35px;
+        padding: 15px 0;
+        width: 360px;
+        background-color: #fff;
+        box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.08);
+        flex-wrap: wrap;
+  
+        .sub-menu {
+          left: 100%;
+          top: 0;
+        }
+  
+        li {
+          width: 100%;
+          margin-right: 0;
+  
+          &:not(:last-child) {
+            a {
+              border-bottom: 0;
+            }
+          }
+  
+          &.current-menu-item {
+            a {
+              color: $main-color;
+  
+              .fa {
+                color: $main-color;
+              }
+            }
+          }
+  
+          a {
+            height: 40px;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-size: 16px;
+            color: #222;
+  
+            &:hover {
+              color: $main-color;
+  
+              .fa {
+                color: #fff;
+              }
             }
           }
         }
